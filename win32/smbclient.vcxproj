@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <SubSystem>Console</SubSystem>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(AKITOOLS)\akibld\akibld-common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{27A2755B-ECAC-47DC-8DE7-7448234D2BC1}</ProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>akilib.lib;windows-amalgamated.lib;strsafe.lib;dwmapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\source4\include\includes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="smbclient.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="smbclient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(AKIROOT)\svn\akisystems\akilib\akilib.vcxproj">
+      <Project>{0A19BC1F-D9EA-4438-BA0D-2E42C97FC45D}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="smbclient.akibld.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source4\client\client.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

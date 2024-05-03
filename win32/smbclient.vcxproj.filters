@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="smbclient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="smbclient.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Build Files">
+      <UniqueIdentifier>{fdd72538-c6e4-41c2-865a-b10cdaa86426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a656a631-af0f-44be-939e-a2d370c23173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fesource Files">
+      <UniqueIdentifier>{77b36751-6e1f-46b6-b31d-06efd4e4dce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0c056877-41b0-4d86-9b1b-e8e097ea1572}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
