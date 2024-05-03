@@ -178,3 +178,8 @@ int ctdb_async_ctx_reinit(TALLOC_CTX *mem_ctx, struct tevent_context *ev)
 {
 	return ENOSYS;
 }
+
+const char *lp__ctdbd_socket(void)
+{
+	return NULL;
+}

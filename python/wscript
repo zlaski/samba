@@ -79,7 +79,7 @@ def configure(conf):
         # Prefer dateutil.parser which is much more widely used.
         if not find_third_party_module(conf,
                                        'dateutil.parser',
-                                       'python3-dateutilis',
+                                       'python3-dateutils',
                                        required=False):
             if not find_third_party_module(conf,
                                            'iso8601',

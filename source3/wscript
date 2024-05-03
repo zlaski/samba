@@ -108,7 +108,7 @@ def configure(conf):
     forced_static_modules = []
     forced_shared_modules = []
 
-    if sys.platform != 'openbsd5':
+    if not sys.platform in ['openbsd5', 'win32', 'cygwin', 'msys']:
         conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
 
     # We crash without vfs_default
