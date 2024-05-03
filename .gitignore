@@ -76,6 +76,7 @@ python/samba/provision/kerberos_implementation.py
 
 # Visual Studio Code
 .vscode/
+.vs/
 
 # read by pyenv to auto switch python envs
 .python-version
