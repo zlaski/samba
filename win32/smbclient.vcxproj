@@ -12,12 +12,17 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>akilib.lib;windows-amalgamated.lib;strsafe.lib;dwmapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>strsafe.lib;dwmapi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\source3\include;..\lib\replace;..\source3;..;..\bin\default\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__STDC_WANT_LIB_EXT1__=1;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\lib\replace\replace.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="..\source4\include\includes.h" />
+    <ClInclude Include="..\source3\include\includes.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="smbclient.ico" />
@@ -26,15 +31,20 @@
     <ResourceCompile Include="smbclient.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="$(AKIROOT)\svn\akisystems\akilib\akilib.vcxproj">
-      <Project>{0A19BC1F-D9EA-4438-BA0D-2E42C97FC45D}</Project>
+    <ProjectReference Include="$(AKIROOT)\svn\akisystems\libc-amalgamated\libc-amalgamated.vcxproj">
+      <Project>{b3c0f3f1-0c7b-4cf2-bce4-2ca9694c85b4}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="smbclient.akibld.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source4\client\client.c" />
+    <ClCompile Include="..\source3\client\client.c">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ShowIncludes>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
